@@ -99,7 +99,9 @@ void keyReleased() {
 void mouseMoved() {
   player.loc.set(mouseX, 500);
   
-  if (mouseX == 0) {
-    player.setLoc(mouseX + player.getDiameter());
+  if (mouseX <= (player.getDiameter()/2)) {
+    player.loc.set(0 + (player.getDiameter()/2), 500);
+  } else if (mouseX >= 600 - (player.getDiameter()/2)) {
+    player.loc.set(600 - (player.getDiameter()/2), 500);
   }
 }
